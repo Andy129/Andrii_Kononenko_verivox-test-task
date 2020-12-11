@@ -1,0 +1,44 @@
+@import "../../../../../variables";
+
+.sort {
+  margin: 0;
+  border: 1px solid #000;
+  padding: var(--gutter);
+
+  &__legend {
+    font-weight: 600;
+  }
+
+  &__grid {
+    --columm: 2;
+    display: grid;
+    grid-template-columns: repeat(var(--columm), 1fr);
+    grid-gap: var(--gutter);
+
+    @media (min-width: $screen-sm) {
+      --columm: 4;
+    }
+
+    @media (min-width: $screen-lg) {
+      max-width: 800px;
+      margin: auto;
+    }
+  }
+
+  &__button {
+    min-height: 25px;
+    border: 1px solid #333;
+    border-radius: 3px;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover,
+    &:focus,
+    &_active {
+      background: #ccc;
+    }
+  }
+}

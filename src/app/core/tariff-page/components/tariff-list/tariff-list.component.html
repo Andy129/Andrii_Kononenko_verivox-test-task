@@ -1,0 +1,6 @@
+<ul class="tariff-list">
+  <li class="tariff-list__item" *ngFor="let tariff of tariffList$ | async; trackBy: utilsService.trackByIndex">
+    <app-tariff-item [tariff]="tariff">
+    </app-tariff-item>
+  </li>
+</ul>

@@ -1,0 +1,21 @@
+:host {
+  display: block;
+  padding-top: 20px;
+}
+
+.tariff-list {
+  list-style: none;
+  margin: 0;
+  border: 1px solid #000;
+  padding: var(--gutter);
+
+  counter-reset: tariffCounter;
+
+  &__item {
+    counter-increment: tariffCounter;
+
+    &:not(:first-child) {
+      margin-top: var(--gutter);
+    }
+  }
+}

@@ -1,0 +1,18 @@
+<fieldset class="sort">
+  <legend class="sort__legend">Sort by</legend>
+
+  <div class="sort__grid">
+    <button class="sort__button"
+            [class.sort__button_active]="isActive === sortTypes.DOWNLOAD_SPEED"
+            (click)="sort(sortTypes.DOWNLOAD_SPEED)">download speed</button>
+    <button class="sort__button"
+            [class.sort__button_active]="isActive === sortTypes.UPLOAD_SPEED"
+            (click)="sort(sortTypes.UPLOAD_SPEED)">upload speed</button>
+    <button class="sort__button"
+            [class.sort__button_active]="isActive === sortTypes.PRICE_UP"
+            (click)="sort(sortTypes.PRICE_UP)">price up</button>
+    <button class="sort__button"
+            [class.sort__button_active]="isActive === sortTypes.PRICE_DOWN"
+            (click)="sort(sortTypes.PRICE_DOWN)">price down</button>
+  </div>
+</fieldset>

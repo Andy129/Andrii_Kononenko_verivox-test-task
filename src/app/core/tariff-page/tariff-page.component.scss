@@ -1,0 +1,15 @@
+@import "../../../variables";
+
+:host {
+  display: block;
+  padding: var(--gutter);
+  margin: auto;
+
+  @media (min-width: $screen-md) {
+    max-width: 800px;
+  }
+
+  @media (min-width: $screen-lg) {
+    max-width: 1140px;
+  }
+}

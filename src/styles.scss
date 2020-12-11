@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+
+:root {
+  --gutter: 14px;
+}
+
+*, *:after, *:before {
+  box-sizing: inherit;
+}
+
+html {
+  font: 14px Arial, Helvetica, sans-serif;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}

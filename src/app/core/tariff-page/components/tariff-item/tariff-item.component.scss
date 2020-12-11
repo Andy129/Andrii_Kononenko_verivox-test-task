@@ -1,0 +1,176 @@
+@import "../../../../../variables";
+
+.tariff {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2fr 1fr auto;
+  grid-gap: var(--gutter);
+  min-height: 80px;
+  border: 1px solid #000;
+  padding: 12px 12px 12px 30px;
+
+  @media (min-width: $screen-lg) {
+    grid-template-columns: 1fr 1fr 1fr auto;
+  }
+
+  &:before {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    content: counter(tariffCounter) '.';
+    font-size: 12px;
+  }
+
+  &__speeds {
+    justify-self: center;
+  }
+
+  &__speed {
+    &:not(:first-child) {
+      margin-top: 8px;
+    }
+
+    &_upload {
+      display: none;
+
+      @media (min-width: $screen-md) {
+        display: block;
+      }
+    }
+  }
+
+  &__speed-label {
+    display: none;
+
+    @media (min-width: $screen-lg) {
+      display: block;
+    }
+  }
+
+  &__aside {
+    display: flex;
+
+    @media (min-width: $screen-md) {
+      flex-direction: column;
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0;
+
+    box-shadow: #000 1px 1px 0,
+                #000 1px 1px 0,
+                #000 1px 1px 0,
+                #000 1px 1px 0,
+                #000 1px 1px 0,
+                #000 1px 1px 0,
+                #000 1px 1px 0,
+                #000 1px 1px 0;
+
+    &:focus {
+      outline: none;
+    }
+
+    @media (min-width: $screen-md) {
+      width: 102px;
+      height: 24px;
+    }
+  }
+
+  &__button-text {
+    display: none;
+    margin-right: 4px;
+
+    @media (min-width: $screen-md) {
+      display: block;
+    }
+  }
+
+  &__price {
+    margin-right: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+
+    @media (min-width: $screen-md) {
+      margin-right: 0;
+      margin-bottom: 10px;
+      text-align: right;
+    }
+  }
+
+  &__benefits {
+    display: none;
+
+    @media (min-width: $screen-lg) {
+      display: block;
+    }
+  }
+
+  &__benefits-list {
+    padding: 0;
+    list-style: none;
+  }
+
+  &__benefits-item {
+    position: relative;
+    padding-left: 10px;
+
+    &:before {
+      position: absolute;
+      left: 0;
+      top: 8px;
+      content: '';
+      height: 2px;
+      width: 2px;
+      background: #000;
+      border-radius: 50%;
+    }
+  }
+}
+
+.capacity {
+  text-align: right;
+
+  @media (min-width: $screen-md) {
+    display: flex;
+  }
+
+  &__icon {
+    position: relative;
+    display: inline-block;
+    height: 100%;
+
+    @media (min-width: $screen-md) {
+      border: 2px solid black;
+    }
+  }
+
+  &__icon,
+  &__body {
+    @media (min-width: $screen-md) {
+      padding: 2px 10px;
+    }
+  }
+
+  &__body {
+    @media (min-width: $screen-md) {
+      border: 1px solid #000;
+      border-left: 0;
+      border-radius: 0 15px 15px 0;
+    }
+  }
+
+  &__label {
+    &:before {
+      content: '\A';
+      white-space: pre;
+
+      @media (min-width: $screen-md) {
+        display: none;
+      }
+    }
+  }
+}

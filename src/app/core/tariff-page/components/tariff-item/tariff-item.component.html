@@ -1,0 +1,44 @@
+<div class="tariff">
+  <div class="tariff__name">{{tariff.name}}</div>
+
+  <div class="tariff__speeds">
+
+    <div class="tariff__speed">
+      <div class="tariff__speed-label">download</div>
+      <div class="capacity">
+        <i class="capacity__icon">↓</i>
+        <span class="capacity__body">{{tariff.downloadSpeed}}
+          <span class="capacity__label">{{tariff.downloadSpeedUnit}}</span>
+      </span>
+      </div>
+    </div>
+
+    <div class="tariff__speed tariff__speed_upload">
+      <div class="tariff__speed-label">upload</div>
+      <div class="capacity">
+        <i class="capacity__icon">↑</i>
+        <span class="capacity__body">{{tariff.uploadSpeed}}
+          <span class="capacity__label">{{tariff.uploadSpeedUnit}}</span>
+      </span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="tariff__benefits">
+    <ul class="tariff__benefits-list">
+      <li class="tariff__benefits-item" *ngFor="let benefitCaption of tariff.benefitsCaptions | sliceArray: benefitsCaptionsAmount; trackBy: utilsService.trackByIndex">
+        {{benefitCaption}}
+      </li>
+    </ul>
+    <div *ngIf="tariff.benefitsCaptions.length > benefitsCaptionsAmount">...</div>
+  </div>
+
+  <div class="tariff__aside">
+    <div class="tariff__price">{{tariff.priceText}}</div>
+    <button class="tariff__button">
+      <div class="tariff__button-text">To Tariff</div>
+      <i class="tariff__button-icon"> > </i>
+    </button>
+  </div>
+</div>
